@@ -30,9 +30,9 @@ The codebase is organized into separate packages for:
 *Exception: For handling Exception
 
 ## Setup
-```git clone  ```
+```git clone  https://github.com/Exe-Alebs/Coupon-system.git```
 
-```cd ```
+```cd Coupon-system```
 
 ```mvn clean install```
 
