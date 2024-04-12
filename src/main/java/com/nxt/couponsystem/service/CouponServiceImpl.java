@@ -31,14 +31,16 @@ public class CouponServiceImpl implements CouponService {
 
     private Coupon findValidCoupon(String couponCode, BigDecimal cartTotalPrice, Long itemCount) {
         Coupon coupon = couponRepository.findByCode(couponCode);
-        if (coupon == null || !isValidCoupon(coupon, cartTotalPrice, itemCount)) {
-            throw new CouponNotFoundException("Coupon Code " +  couponCode + " not found " );
+        if (coupon == null || !isValidCoupon(coupon, cartTotalPrice)) {
+            throw new CouponNotFoundException("Coupon not found or invalid");
         }
         return coupon;
     }
 
-    private boolean isValidCoupon(Coupon coupon, BigDecimal cartTotalPrice, Long itemCount) {
-        return cartTotalPrice.compareTo(coupon.getMinimumCartTotal()) >= 0 && itemCount >= coupon.getMinimumItemCount();
+
+
+    private boolean isValidCoupon(Coupon coupon, BigDecimal cartTotalPrice) {
+        return cartTotalPrice.compareTo(coupon.getMinimumCartTotal()) >= 0;
     }
 
     private void calculateDiscountAndAdjustPrice(Coupon coupon, BigDecimal cartTotalPrice) {

@@ -36,13 +36,20 @@ public class Coupon {
     @Column(name = "discount_type", nullable = false)
     private DiscountType discountType;
 
-    @Column(name = "discount_amount" ,nullable = false)
+    @Column(name = "discount_amount" )
     private BigDecimal discountAmount;
 
-    @Column(name = "adjusted_price", nullable = false)
+    @Column(name = "adjusted_price")
     private BigDecimal totalAdjustedPrice;
 
 
-    public Coupon(String couponCode) {
+
+    public Coupon(String code, BigDecimal minimumCartTotal, DiscountType discountType, BigDecimal discountAmount, int minimumItemCount) {
+        this.code = code;
+        this.minimumCartTotal = minimumCartTotal;
+        this.discountType = discountType;
+        this.discountAmount = discountAmount;
+        this.minimumItemCount = minimumItemCount;
     }
+
 }

@@ -1,13 +1,11 @@
-package com.nxt.couponsystem.CartServiceTest;
+package com.nxt.couponsystem.service;
 
 import com.nxt.couponsystem.data.Cart;
 
 import com.nxt.couponsystem.data.Item;
 import com.nxt.couponsystem.dto.CartDTO;
-import com.nxt.couponsystem.exception.CartNotFoundException;
 import com.nxt.couponsystem.repository.CartRepository;
 import com.nxt.couponsystem.repository.ItemRepository;
-import com.nxt.couponsystem.service.CartServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertThrows;
