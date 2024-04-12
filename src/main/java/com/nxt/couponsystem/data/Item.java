@@ -30,4 +30,8 @@ public class Item {
     private Cart cart;
 
 
+    public Item(String name, BigDecimal price) {
+        this.name = name;
+        this.price = price != null ? price : BigDecimal.ZERO;
+    }
 }

@@ -6,6 +6,7 @@ import com.nxt.couponsystem.dto.CartDTO;
 import com.nxt.couponsystem.dto.ItemDTO;
 import com.nxt.couponsystem.repository.CartRepository;
 import com.nxt.couponsystem.repository.ItemRepository;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 ;
@@ -16,6 +17,7 @@ import java.util.NoSuchElementException;
 import java.util.stream.Collectors;
 
 @Service
+@AllArgsConstructor
 public class CartServiceImpl implements CartService {
 
     @Autowired
